@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenido a Aura Residencia - Una comunidad residencial para adultos mayores que brinda cuidado excepcional y comodidad para sus seres queridos.">
+    <title>Aura Residencia | Comunidad Residencial para Adultos Mayores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/remixicon/remixicon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="logo">Aura Residencia</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="#about" class="nav-link">Nosotros</a></li>
+                <li><a href="#services" class="nav-link">Servicios</a></li>
+                <li><a href="#gallery" class="nav-link">Galería</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu" aria-label="Alternar menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Bienvenido a Aura</h1>
+                <p class="tagline">Residencia asistida para el adulto mayor.</p>
+                <a href="#contact" class="cta-button">Sumate a nuestra lista de espera!</a>
+            </div>
+        </section>
+        <section id="video" class="video">
+            <div class="container">
+                  <video class="video-hero" poster="images/the_senior_group_poster.png" autoplay muted loop>
+                    <source src="images/the_senior_group.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Sobre Nosotros</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    </div>
+                    <div class="about-image">
+                        <!-- <img src="images/about-us.jpg" alt="Adultos mayores disfrutando de actividades comunitarias en Aura Residencia" loading="lazy"> -->
+                         <video src="images/video-presentacion2.mp4" poster="images/video-portrait.png" controls></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Nuestros Servicios</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="images/espacios/comedor_1.jpg" alt="Vida Asistida" loading="lazy">
+                        <h3>Vida Asistida</h3>
+                        <p>Cuidado personalizado y apoyo para actividades diarias manteniendo la independencia.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/espacios/tecno.jpg" alt="Atención Médica" loading="lazy">
+                        <h3>Atención Médica</h3>
+                        <p>Soporte y monitoreo médico profesional las 24 horas para su tranquilidad.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/espacios/comedor_2.jpg" alt="Actividades" loading="lazy">
+                        <h3>Actividades y Recreación</h3>
+                        <p>Actividades sociales, programas de ejercicio y eventos culturales estimulantes.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/espacios/comedor_2.jpg" alt="Gastronomía Gourmet" loading="lazy">
+                        <h3>Gastronomía Gourmet</h3>
+                        <p>Menús personalizados preparados por chefs profesionales, adaptados a cada necesidad nutricional.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/espacios/patio_2.jpg" alt="Jardín Terapéutico" loading="lazy">
+                        <h3>Jardín Terapéutico</h3>
+                        <p>Espacios verdes diseñados para la relajación, meditación y actividades al aire libre.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/espacios/patio_1.jpg" alt="Rehabilitación Física" loading="lazy">
+                        <h3>Rehabilitación Física</h3>
+                        <p>Programas personalizados de fisioterapia y ejercicios adaptados para mantener la movilidad.</p>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2>Galería</h2>
+            </div>
+            <div class="carousel-wrapper">
+                <i id="left" class="ri-arrow-drop-left-line"></i>
+                <ul class="carousel">
+                  <li class="carousel-card">
+                    <img src="images/espacios/comedor_1.jpg" alt="Concierto 1" draggable="false">
+                  </li>
+                  <li class="carousel-card">
+                    <img src="images/espacios/comedor_2.jpg" alt="Concierto 1" draggable="false">
+                  </li>
+                  <li class="carousel-card">
+                    <img src="images/espacios/comedor_3.jpg" alt="Concierto 1" draggable="false">
+                  </li>
+                  <li class="carousel-card">
+                    <img src="images/espacios/patio_1.jpg" alt="Concierto 1" draggable="false">
+                  </li>
+                  <li class="carousel-card">
+                    <img src="images/espacios/patio_2.jpg" alt="Concierto 1" draggable="false">
+                  </li>
+                  <li class="carousel-card">
+                    <img src="images/espacios/patio_3.jpg" alt="Concierto 1" draggable="false">
+                  </li>
+                </ul>
+                <i id="right" class="ri-arrow-drop-right-line"></i>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contáctenos</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <div class="info-item">
+                            <i class="ri-map-pin-line"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Ecuador 360<br>Río Cuarto, Córdoba</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="ri-phone-line"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>(358) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="ri-mail-line"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@auraresidencia.com.ar</p>
+                            </div>
+                        </div>
+                        <div class="contact-social">
+                            <h4>Redes Sociales</h4>
+                            <div class="social-icons">
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                    <i class="ri-whatsapp-line"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <a href="mailto:info@auraresidencia.com.ar" aria-label="Email">
+                                    <i class="ri-mail-fill"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="surname">Apellido</label>
+                                    <input type="text" id="surname" name="surname" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Correo Electrónico</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Teléfono</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto de la Consulta</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Seleccione un asunto</option>
+                                    <option value="informacion_general">Información General</option>
+                                    <option value="disponibilidad">Consulta de Disponibilidad</option>
+                                    <option value="visita">Programar una Visita</option>
+                                    <option value="servicios_medicos">Servicios Médicos</option>
+                                    <option value="actividades">Actividades y Recreación</option>
+                                    <option value="empleo">Oportunidades de Empleo</option>
+                                    <option value="otro">Otro Asunto</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje (Opcional)</label>
+                                <textarea id="message" name="message"></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.230557053631!2d-64.3278606467388!3d-33.103022009268685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cdff8542500bf7%3A0xbe7179b29b1cbc0c!2sEcuador%20360%2C%20X5804%20R%C3%ADo%20Cuarto%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1742424253838!5m2!1ses!2sar"                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="Aura Residencia Logo" class="footer-logo-img">
+                </div>
+
+                <div class="footer-section">
+                    <h4>SERVICIOS</h4>
+                    <ul>
+                        <li><a href="#services">Vida Asistida</a></li>
+                        <li><a href="#services">Atención Médica</a></li>
+                        <li><a href="#services">Actividades y Recreación</a></li>
+                        <li><a href="#services">Gastronomía Gourmet</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>INSTALACIONES</h4>
+                    <ul>
+                        <li><a href="#services">Espacios Comunes</a></li>
+                        <li><a href="#services">Áreas de Rehabilitación</a></li>
+                        <li><a href="#services">Paseo de los Sentidos</a></li>
+                        <li><a href="#services">Sala de Estimulación Sensorial</a></li>
+                        <li><a href="#services">Comodidades</a></li>
+                        <li><a href="#services">Jardín Terapéutico</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>SUPERVISIÓN MÉDICA</h4>
+                    <ul>
+                        <li><a href="#services">Supervisión 24/7</a></li>
+                        <li><a href="#services">Nutrición Personalizada</a></li>
+                        <li><a href="#services">Cuidado de Enfermería</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>SOBRE NOSOTROS</h4>
+                    <ul>
+                        <li><a href="#about">Nuestra Historia</a></li>
+                        <li><a href="#about">Valores</a></li>
+                        <li><a href="#about">Nuestros Profesionales</a></li>
+                        <li><a href="#about">Unite a nuestro equipo</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-fill"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="ri-mail-fill"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Aura Residencia. Todos los derechos reservados.</p>
+                <p class="developer-signature">Diseñado con cariño por <a href="https://vloid.com/" target="_blank" rel="noopener noreferrer">vloid</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5493584123456" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="ri-whatsapp-line"></i>
+        <span class="whatsapp-text">¿Necesitas ayuda?</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html> 
