@@ -675,6 +675,14 @@ textarea {
     text-align: center;
 }
 
+.copyright {
+    margin-bottom: 0.5rem;
+}
+
+.copyright-line {
+    display: inline;
+}
+
 .developer-signature {
     margin: 0;
     color: rgba(255, 255, 255, 0.8);
@@ -907,5 +915,13 @@ textarea {
 
     .footer-social {
         flex-wrap: wrap;
+    }
+
+    .copyright-line {
+        display: block;
+    }
+    
+    .copyright-line:first-child {
+        margin-bottom: 0.25rem;
     }
 } 
