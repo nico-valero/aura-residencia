@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Test | Aura Residencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/remixicon/remixicon.css">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #F5F5DC;
+            --tertiary-color: #4a90e21a;
+            --text-color: #333333;
+            --light-text: #666666;
+            --extra-light: #ebebeb;
+            --white: #FFFFFF;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --large-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .team-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--white) 0%, var(--extra-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="%234A90E2" fill-opacity="0.05"/></svg>');
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-wrapper {
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 3.5) - 20px);
+            gap: 20px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .team-grid.dragging {
+            cursor: grabbing;
+            scroll-behavior: auto;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(74, 144, 226, 0.9), rgba(74, 144, 226, 0));
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover .member-overlay {
+            opacity: 1;
+        }
+
+        .member-info {
+            padding: 2rem;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .member-name {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .member-position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .member-bio {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .social-links {
+            transform: translateY(0);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .team-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 1;
+            box-shadow: var(--shadow);
+        }
+
+        .team-arrow:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: var(--large-shadow);
+        }
+
+        .team-arrow.prev {
+            left: 0;
+        }
+
+        .team-arrow.next {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-auto-columns: calc(100% - 20px);
+            }
+            .member-image {
+                height: 300px;
+            }
+            .member-info {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestro Equipo</h2>
+                <p class="section-description">Conoce a los profesionales que hacen de Aura Residencia un lugar especial para nuestros residentes.</p>
+            </div>
+            <div class="team-wrapper">
+                <button class="team-arrow prev" aria-label="Anterior">
+                    <i class="ri-arrow-drop-left-line"></i>
+                </button>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="../media/team-pfp.png" alt="Miembro del equipo 1">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                                    <a href="#"><i class="ri-mail-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Dr. Juan Pérez</h3>
+                            <p class="member-position">Director Médico</p>
+                            <p class="member-bio">Especialista en geriatría con más de 15 años de experiencia en el cuidado de adultos mayores.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="../media/team-pfp.png" alt="Miembro del equipo 2">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                                    <a href="#"><i class="ri-mail-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Dra. María García</h3>
+                            <p class="member-position">Coordinadora de Cuidados</p>
+                            <p class="member-bio">Experta en enfermería geriátrica y coordinación de cuidados especializados.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="../media/team-pfp.png" alt="Miembro del equipo 3">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                                    <a href="#"><i class="ri-mail-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Lic. Carlos López</h3>
+                            <p class="member-position">Terapeuta Ocupacional</p>
+                            <p class="member-bio">Especialista en rehabilitación y actividades terapéuticas para adultos mayores.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="../media/team-pfp.png" alt="Miembro del equipo 4">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                                    <a href="#"><i class="ri-mail-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Dra. Ana Martínez</h3>
+                            <p class="member-position">Psicóloga</p>
+                            <p class="member-bio">Especialista en psicología geriátrica y apoyo emocional para residentes y familias.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="../media/team-pfp.png" alt="Miembro del equipo 5">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="ri-linkedin-fill"></i></a>
+                                    <a href="#"><i class="ri-mail-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Dra. Ana Martínez</h3>
+                            <p class="member-position">Psicóloga</p>
+                            <p class="member-bio">Especialista en psicología geriátrica y apoyo emocional para residentes y familias.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="team-arrow next" aria-label="Siguiente">
+                    <i class="ri-arrow-drop-right-line"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Prevent context menu on images
+            document.querySelectorAll('.member-image img').forEach(img => {
+                img.addEventListener('contextmenu', e => e.preventDefault());
+            });
+
+            const teamGrid = document.querySelector('.team-grid');
+            const prevButton = document.querySelector('.team-arrow.prev');
+            const nextButton = document.querySelector('.team-arrow.next');
+            
+            let isDragging = false;
+            let startX = 0;
+            let scrollLeft = 0;
+
+            function showHideArrows() {
+                const scrollWidth = teamGrid.scrollWidth - teamGrid.clientWidth;
+                prevButton.style.display = teamGrid.scrollLeft === 0 ? 'none' : 'flex';
+                nextButton.style.display = teamGrid.scrollLeft >= scrollWidth ? 'none' : 'flex';
+            }
+
+            function dragStart(e) {
+                isDragging = true;
+                startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                scrollLeft = teamGrid.scrollLeft;
+                teamGrid.classList.add('dragging');
+            }
+
+            function drag(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                
+                const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+                const diff = currentX - startX;
+                teamGrid.scrollLeft = scrollLeft - diff;
+            }
+
+            function dragEnd() {
+                isDragging = false;
+                teamGrid.classList.remove('dragging');
+                showHideArrows();
+            }
+
+            // Button controls
+            prevButton.addEventListener('click', () => {
+                const scrollAmount = teamGrid.clientWidth * 0.8;
+                teamGrid.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            nextButton.addEventListener('click', () => {
+                const scrollAmount = teamGrid.clientWidth * 0.8;
+                teamGrid.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Add event listeners
+            teamGrid.addEventListener('mousedown', dragStart);
+            teamGrid.addEventListener('touchstart', dragStart);
+            window.addEventListener('mousemove', drag);
+            window.addEventListener('touchmove', drag);
+            window.addEventListener('mouseup', dragEnd);
+            window.addEventListener('touchend', dragEnd);
+
+            // Show/hide arrows on scroll
+            teamGrid.addEventListener('scroll', showHideArrows);
+
+            // Initial check for arrows
+            showHideArrows();
+        });
+    </script>
+</body>
+</html> 
