@@ -2,6 +2,7 @@
 /* Variables */
 :root {
     --primary-color: #4A90E2;
+    --primary-color-transparent: #4a91e227;
     --secondary-color: #F5F5DC;
     --tertiary-color: #4a90e21a;
     --text-color: #333333;
@@ -52,7 +53,7 @@ h2::after {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
     border-radius: 3px;
 }
 
@@ -217,15 +218,16 @@ h2::after {
 
 /* Hero Section */
 .hero {
-    padding: 10rem 0 6rem;
-    background: linear-gradient(rgba(74, 144, 226, 0.1), rgba(74, 144, 226, 0.1)),
+    padding: 5rem 0 6rem;
+    background: linear-gradient(rgba(74, 144, 226, 0.4), rgba(74, 144, 226, 0.1)),
                 url('images/hero-bg.jpg') center/cover;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: -1rem;
+    font-size: 10.5rem;
+    margin-bottom: -3.5rem;
+    color: var(--white);
 }
 
 .tagline {
