@@ -685,7 +685,9 @@ textarea {
 
 .developer-signature {
     margin: 0;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 0.85rem;
 }
 
 .developer-signature a {
@@ -699,6 +701,7 @@ textarea {
     font-weight: 600;
     position: relative;
     display: inline-block;
+    font-style: normal;
 }
 
 .developer-signature a::after {
