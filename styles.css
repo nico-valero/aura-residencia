@@ -399,12 +399,11 @@ h1, h2, h3, h4 {
     overflow-x: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
+    scroll-snap-type: none;
 }
 
 .carousel.dragging {
-    scroll-snap-type: none;
     cursor: grabbing;
-    scroll-behavior: auto;
     user-select: none;
 }
 
@@ -412,7 +411,8 @@ h1, h2, h3, h4 {
     list-style: none;
     border-radius: 12px;
     cursor: pointer;
-    scroll-snap-align: start;
+    scroll-snap-type: none;
+    scroll-snap-align: none;
 }
 
 .carousel-card img {
