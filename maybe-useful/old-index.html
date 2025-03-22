@@ -8,20 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/remixicon/remixicon.css">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="test-styles.css">
+    <link rel="stylesheet" href="assets/remixicon/remixicon.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav-bar">
             <div class="logo">Aura Residencia</div>
             <ul class="nav-links">
-                <li><a href="index-test.html" class="nav-link">Inicio</a></li>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="about.html" class="nav-link">Quiénes Somos</a></li>
-                <li><a href="index-test.html#services" class="nav-link">Servicios</a></li>
-                <li><a href="index-test.html#gallery" class="nav-link">Instalaciones</a></li>
-                <li><a href="index-test.html#contact" class="nav-link">Contacto</a></li>
+                <li><a href="index.html#services" class="nav-link">Servicios</a></li>
+                <li><a href="index.html#gallery" class="nav-link">Instalaciones</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
             </ul>
             <button class="mobile-menu" aria-label="Alternar menú">
                 <span></span>
@@ -32,30 +31,6 @@
     </header>
 
     <main>
-        <section id="video" class="video">
-            <div class="container">
-                <video class="video-hero" poster="../media/the_senior_group_poster.png" autoplay muted loop>
-                    <source src="../media/the_senior_group.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </section>
-
-        <section class="banner">
-            <div class="container">
-                <div class="banner-content">
-                    <div class="banner-item">
-                        <i class="ri-team-fill"></i>
-                        <p>Equipo profesional capacitado</p>
-                    </div>
-                    <div class="banner-item">
-                        <i class="ri-stethoscope-line"></i>
-                        <p>Cuidado y atención integral</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="home" class="hero">
             <div class="container">
                 <h1>Aura</h1>
@@ -63,26 +38,27 @@
                 <a href="#contact" class="cta-button">Sumate a nuestra lista de espera!</a>
             </div>
         </section>
-        <section id="about" class="about">
+        <section id="video" class="video">
             <div class="container">
-                <div class="about-content">
-                    <div class="about-image">
-                         <video src="../media/video-presentacion2.mp4" poster="../media/video-portrait.png" controls></video>
-                    </div>
-                    <div class="about-text">
-                        <h2>Quiénes Somos</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
+                  <video class="video-hero" poster="media/the_senior_group_poster.png" autoplay muted loop>
+                    <source src="media/the_senior_group.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
             </div>
         </section>
-
-        <section class="cta-banner">
+        <section id="about" class="about">
             <div class="container">
-                <h2>¡Envianos tu Consulta!</h2>
-                <p>Descubrí cómo podemos ayudar a tus seres queridos a vivir con dignidad y alegría.</p>
-                <a href="#contact" class="cta-button">Contactanos ahora</a>
+                <h2>Quiénes Somos</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    </div>
+                    <div class="about-image">
+                         <video src="media/video-presentacion2.mp4" poster="media/video-portrait.png" controls></video>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -91,71 +67,69 @@
                 <h2>Nuestros Servicios</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <img src="../media/espacios/comedor_1.jpg" alt="Estadía de Largo Plazo" loading="lazy">
-                        <h3>Estadía de Largo Plazo</h3>
-                        <p>Ofrecemos un ambiente seguro y cómodo para una estadía prolongada, con atención personalizada y actividades diarias para el bienestar de nuestros residentes.</p>
+                        <img src="media/espacios/comedor_1.jpg" alt="Vida Asistida" loading="lazy">
+                        <h3>Vida Asistida</h3>
+                        <p>Cuidado personalizado y apoyo para actividades diarias manteniendo la independencia.</p>
                     </div>
                     <div class="service-card">
-                        <img src="../media/espacios/tecno.jpg" alt="Atención Médica" loading="lazy">
-                        <h3>Estadía Temporal</h3>
-                        <p>Ofrecemos atención médica integral y personalizada, asegurando el bienestar de nuestros residentes con un equipo de profesionales altamente capacitados.</p>
+                        <img src="media/espacios/tecno.jpg" alt="Atención Médica" loading="lazy">
+                        <h3>Atención Médica</h3>
+                        <p>Soporte y monitoreo médico profesional las 24 horas para su tranquilidad.</p>
                     </div>
                     <div class="service-card">
-                        <img src="../media/espacios/comedor_2.jpg" alt="Actividades" loading="lazy">
-                        <h3>Residencia Asistida</h3>
-                        <p>Ofrecemos una variedad de actividades sociales, programas de ejercicio adaptados y eventos culturales enriquecedores para todos nuestros residentes.</p>
+                        <img src="media/espacios/comedor_2.jpg" alt="Actividades" loading="lazy">
+                        <h3>Actividades y Recreación</h3>
+                        <p>Actividades sociales, programas de ejercicio y eventos culturales estimulantes.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="media/espacios/comedor_2.jpg" alt="Gastronomía Gourmet" loading="lazy">
+                        <h3>Gastronomía Gourmet</h3>
+                        <p>Menús personalizados preparados por chefs profesionales, adaptados a cada necesidad nutricional.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="media/espacios/patio_2.jpg" alt="Jardín Terapéutico" loading="lazy">
+                        <h3>Jardín Terapéutico</h3>
+                        <p>Espacios verdes diseñados para la relajación, meditación y actividades al aire libre.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="media/espacios/patio_1.jpg" alt="Rehabilitación Física" loading="lazy">
+                        <h3>Rehabilitación Física</h3>
+                        <p>Programas personalizados de fisioterapia y ejercicios adaptados para mantener la movilidad.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="meet-banner">
-            <div class="container">
-                <div class="cta-content">
-                    <div class="cta-text">
-                        <h2>Conoce Nuestra Residencia</h2>
-                        <p>Te invitamos a explorar nuestras instalaciones y servicios, los cuales han sido cuidadosamente diseñados para garantizar el bienestar, la comodidad y la felicidad de nuestros residentes. Cada rincón de nuestra residencia está pensado para ofrecer un ambiente acogedor y seguro, donde cada persona pueda disfrutar de una vida plena y activa.</p>
-                        <p>¡No dudes en contactarnos para más información o programar una visita guiada!</p>
-                        <a href="#contact" class="cta-button">Programá tu visita</a>
-                    </div>
-                    <div class="cta-image">
-                        <video src="../media/video-patio.mp4" poster="../media/espacios/patio_2.jpg" controls></video>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--
         <section id="gallery" class="gallery">
             <div class="container">
-                <h2>Seguinos en Instagram</h2>
+                <h2>Galería</h2>
             </div>
             <div class="carousel-wrapper">
                 <i id="left" class="ri-arrow-drop-left-line"></i>
                 <ul class="carousel">
                   <li class="carousel-card">
-                    <img src="../media/espacios/comedor_1.jpg" alt="Comedor principal" draggable="false">
+                    <img src="media/espacios/comedor_1.jpg" alt="Comedor principal" draggable="false">
                   </li>
                   <li class="carousel-card">
-                    <img src="../media/espacios/comedor_2.jpg" alt="Área de comedor" draggable="false">
+                    <img src="media/espacios/comedor_2.jpg" alt="Área de comedor" draggable="false">
                   </li>
                   <li class="carousel-card">
-                    <img src="../media/espacios/comedor_3.jpg" alt="Espacio de comedor" draggable="false">
+                    <img src="media/espacios/comedor_3.jpg" alt="Espacio de comedor" draggable="false">
                   </li>
                   <li class="carousel-card">
-                    <img src="../media/espacios/patio_1.jpg" alt="Patio exterior" draggable="false">
+                    <img src="media/espacios/patio_1.jpg" alt="Patio exterior" draggable="false">
                   </li>
                   <li class="carousel-card">
-                    <img src="../media/espacios/patio_2.jpg" alt="Área de patio" draggable="false">
+                    <img src="media/espacios/patio_2.jpg" alt="Área de patio" draggable="false">
                   </li>
                   <li class="carousel-card">
-                    <img src="../media/espacios/patio_3.jpg" alt="Espacio al aire libre" draggable="false">
+                    <img src="media/espacios/patio_3.jpg" alt="Espacio al aire libre" draggable="false">
                   </li>
                 </ul>
                 <i id="right" class="ri-arrow-drop-right-line"></i>
             </div>
         </section>
-        -->
+        
         <section id="contact" class="contact">
             <div class="container">
                 <h2>Contactanos</h2>
@@ -266,37 +240,37 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-logo">
-                    <img src="../media/logo-white.png" alt="Aura Residencia Logo" class="footer-logo-img">
+                    <img src="media/logo-white.png" alt="Aura Residencia Logo" class="footer-logo-img">
                 </div>
 
                 <div class="footer-section">
                     <h4>SERVICIOS</h4>
                     <ul>
-                        <li><a href="index-test.html#services">Vida Asistida</a></li>
-                        <li><a href="index-test.html#services">Atención Médica</a></li>
-                        <li><a href="index-test.html#services">Actividades y Recreación</a></li>
-                        <li><a href="index-test.html#services">Gastronomía Gourmet</a></li>
+                        <li><a href="index.html#services">Vida Asistida</a></li>
+                        <li><a href="index.html#services">Atención Médica</a></li>
+                        <li><a href="index.html#services">Actividades y Recreación</a></li>
+                        <li><a href="index.html#services">Gastronomía Gourmet</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>INSTALACIONES</h4>
                     <ul>
-                        <li><a href="index-test.html#services">Espacios Comunes</a></li>
-                        <li><a href="index-test.html#services">Áreas de Rehabilitación</a></li>
-                        <li><a href="index-test.html#services">Paseo de los Sentidos</a></li>
-                        <li><a href="index-test.html#services">Sala de Estimulación Sensorial</a></li>
-                        <li><a href="index-test.html#services">Comodidades</a></li>
-                        <li><a href="index-test.html#services">Jardín Terapéutico</a></li>
+                        <li><a href="index.html#services">Espacios Comunes</a></li>
+                        <li><a href="index.html#services">Áreas de Rehabilitación</a></li>
+                        <li><a href="index.html#services">Paseo de los Sentidos</a></li>
+                        <li><a href="index.html#services">Sala de Estimulación Sensorial</a></li>
+                        <li><a href="index.html#services">Comodidades</a></li>
+                        <li><a href="index.html#services">Jardín Terapéutico</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>SUPERVISIÓN MÉDICA</h4>
                     <ul>
-                        <li><a href="index-test.html#services">Supervisión 24/7</a></li>
-                        <li><a href="index-test.html#services">Nutrición Personalizada</a></li>
-                        <li><a href="index-test.html#services">Cuidado de Enfermería</a></li>
+                        <li><a href="index.html#services">Supervisión 24/7</a></li>
+                        <li><a href="index.html#services">Nutrición Personalizada</a></li>
+                        <li><a href="index.html#services">Cuidado de Enfermería</a></li>
                     </ul>
                 </div>
 
@@ -330,7 +304,5 @@
     </a>
 
     <script src="script.js"></script>
-    <script src="header-scroll.js"></script>
-    <script src="gallery.js"></script>
 </body>
 </html> 
