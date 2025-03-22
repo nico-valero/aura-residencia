@@ -3,8 +3,8 @@
 :root {
     --primary-color: #4A90E2;
     --primary-color-transparent: #4a91e227;
-    --secondary-color: #F5F5DC;
-    --tertiary-color: #4a90e21a;
+    --secondary-color: #EDF4FC;
+    --tertiary-color: #EDF4FC;
     --text-color: #333333;
     --light-text: #666666;
     --extra-light: #ebebeb;
@@ -102,7 +102,6 @@ h2::after {
 
 .logo:hover {
     color: var(--text-color);
-    transform: scale(1.05);
 }
 
 .nav-links {
