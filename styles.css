@@ -1737,15 +1737,27 @@ textarea {
 
 /* Services List Section */
 .list-section {
-    padding: 4rem 0;
-    background-color: var(--white);
+    padding: 1rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(media/the_senior_group_poster.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+}
+
+.list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .list-card {
-    background-color: var(--white);
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: var(--shadow);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
 }
 
 .list-card ul {
@@ -1754,9 +1766,6 @@ textarea {
 }
 
 .list-card ul li {
-    list-style-type: "\2713";
-}
-
-.list-card ul li::marker {
-    color: var(--primary-color);
+    list-style-type: none;
+    margin-bottom: 0.5rem;
 }
