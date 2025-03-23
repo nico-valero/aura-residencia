@@ -231,15 +231,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="subject">Asunto de la Consulta <span class="required">*</span></label>
-                                <select id="subject" name="subject" required>
+                                <select id="subject" name="subject" required onchange="toggleFileInput()">
                                     <option value="" disabled selected>Seleccione un asunto</option>
                                     <option value="informacion_general">Información General</option>
                                     <option value="disponibilidad">Consulta de Disponibilidad</option>
                                     <option value="visita">Programar una Visita</option>
                                     <option value="servicios_medicos">Servicios Médicos</option>
                                     <option value="actividades">Actividades y Recreación</option>
+                                    <option value="oportunidades_laborales">Oportunidades Laborales</option>
                                     <option value="otro">Otro Asunto</option>
                                 </select>
+                            </div>
+                            <div class="form-group" id="file-upload" style="display: none;">
+                                <label for="file">Adjuntar CV <span class="required">*</span></label>
+                                <input type="file" id="file" name="file" required>
                             </div>
                             <div class="form-group">
                                 <label for="message">Mensaje (Opcional)</label>
@@ -247,6 +252,13 @@
                             </div>
                             <button type="submit" class="submit-button">Enviar Mensaje</button>
                         </form>
+                        <script>
+                            function toggleFileInput() {
+                                const subjectSelect = document.getElementById('subject');
+                                const fileUpload = document.getElementById('file-upload');
+                                fileUpload.style.display = subjectSelect.value === 'oportunidades_laborales' ? 'block' : 'none';
+                            }
+                        </script>
                     </div>
                 </div>
                 <div class="map-container">
