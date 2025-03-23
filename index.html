@@ -262,8 +262,11 @@
                             </div>
                             <div class="form-group" id="file-upload" style="display: none;">
                                 <label for="file">Adjuntar CV <span class="required">*</span></label>
-                                <input type="file" id="file" name="file" required>
+                                <input type="file" id="file" name="file" required accept=".pdf,.doc,.docx" onchange="validateFileSize(this)">
+                                <small>Máximo tamaño de archivo: 2 MB</small>
                             </div>
+                            <script>
+                            </script>
                             <div class="form-group">
                                 <label for="message">Mensaje (Opcional)</label>
                                 <textarea id="message" name="message"></textarea>
@@ -276,6 +279,14 @@
                                 const fileUpload = document.getElementById('file-upload');
                                 fileUpload.style.display = subjectSelect.value === 'oportunidades_laborales' ? 'block' : 'none';
                             }
+                            
+                            function validateFileSize(input) {
+                                    const file = input.files[0];
+                                    if (file && file.size > 2 * 1024 * 1024) { // 2 MB
+                                        alert("El tamaño del archivo no debe exceder los 2 MB.");
+                                        input.value = ""; // Clear the input
+                                    }
+                                }
                         </script>
                     </div>
                 </div>
