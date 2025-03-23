@@ -34,7 +34,7 @@
         <section class="page-header">
             <div class="container">
                 <h1>Quiénes Somos</h1>
-                <p class="subtitle">Conoce nuestra historia, valores y el equipo profesional que hace de Aura Residencia un lugar especial para nuestros residentes.</p>
+                <p class="subtitle">Conoce nuestra historia, valores y el equipo profesional que hace de Aura Residencia un lugar especial.</p>
             </div>
         </section>
 
@@ -54,33 +54,53 @@
             </div>
         </section>
 
+        <section id="mission" class="mission-vision">
+            <div class="container">
+                <div class="mission-vision-grid">
+                    <div class="mission-vision-card">
+                        <h3>Nuestra Misión</h3>
+                        <p>Nuestra misión es proporcionar un ambiente de cuidado y atención de alta calidad, que respete y valorice la dignidad y el bienestar de nuestros residentes.</p>
+                    </div>
+                    <div class="mission-vision-card">
+                        <h3>Nuestra Visión</h3>
+                        <p>Nuestra visión es ser líderes en el cuidado de adultos mayores, ofreciendo un servicio de alta calidad que respete y valorice la dignidad y el bienestar de nuestros residentes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="values" class="our-values">
             <div class="container">
                 <h2>Nuestros Valores</h2>
                 <div class="values-grid">
                     <div class="value-card">
-                        <i class="ri-heart-line"></i>
-                        <h3>Compasión</h3>
-                        <p>Brindamos atención con amor y empatía, entendiendo las necesidades individuales de cada residente.</p>
+                        <i class="ri-service-line"></i>
+                        <h3>Integridad</h3>
+                        <p>Valoramos la honestidad y la transparencia en todas nuestras interacciones, asegurando un ambiente de confianza y respeto para nuestros residentes y sus familias.</p>
                     </div>
                     <div class="value-card">
-                        <i class="ri-medal-line"></i>
-                        <h3>Excelencia</h3>
-                        <p>Nos comprometemos con la más alta calidad en todos nuestros servicios y cuidados.</p>
+                        <i class="ri-lightbulb-line"></i>
+                        <h3>Empoderamiento</h3>
+                        <p>Fomentamos la autonomía y la confianza de nuestros residentes, brindando las herramientas necesarias para que tomen decisiones informadas sobre su bienestar.</p>
                     </div>
                     <div class="value-card">
                         <i class="ri-team-line"></i>
-                        <h3>Comunidad</h3>
-                        <p>Fomentamos un ambiente social activo donde las relaciones y la participación son fundamentales.</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="ri-honour-line"></i>
-                        <h3>Respeto</h3>
-                        <p>Valoramos la dignidad y autonomía de cada persona, promoviendo su bienestar integral.</p>
+                        <h3>Compromiso Social</h3>
+                        <p>Comprometidos con mejorar la calidad de vida de nuestros residentes, promoviendo la interacción social y el apoyo mutuo entre nuestros mayores y sus familias.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <h2>Visitá Nuestra Residencia</h2>
+                <p>Te invitamos a que visites la residencia en persona. Experimenta la calidez y el cuidado que brindamos a nuestros residentes.</p>
+                <a href="contact.html" class="cta-button">Programá tu visita</a>
+            </div>
+        </section>
+
+
         <!--
         <section id="team" class="our-team">
             <div class="container">
@@ -269,80 +289,6 @@
     </a>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Prevent context menu on images
-            document.querySelectorAll('.member-image img').forEach(img => {
-                img.addEventListener('contextmenu', e => e.preventDefault());
-            });
-
-            const teamGrid = document.querySelector('.team-grid');
-            const prevButton = document.querySelector('.team-arrow.prev');
-            const nextButton = document.querySelector('.team-arrow.next');
-            
-            let isDragging = false;
-            let startX = 0;
-            let scrollLeft = 0;
-
-            function showHideArrows() {
-                const scrollWidth = teamGrid.scrollWidth - teamGrid.clientWidth;
-                prevButton.style.display = teamGrid.scrollLeft === 0 ? 'none' : 'flex';
-                nextButton.style.display = teamGrid.scrollLeft >= scrollWidth ? 'none' : 'flex';
-            }
-
-            function dragStart(e) {
-                isDragging = true;
-                startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-                scrollLeft = teamGrid.scrollLeft;
-                teamGrid.classList.add('dragging');
-            }
-
-            function drag(e) {
-                if (!isDragging) return;
-                e.preventDefault();
-                
-                const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-                const diff = currentX - startX;
-                teamGrid.scrollLeft = scrollLeft - diff;
-            }
-
-            function dragEnd() {
-                isDragging = false;
-                teamGrid.classList.remove('dragging');
-                showHideArrows();
-            }
-
-            // Button controls
-            prevButton.addEventListener('click', () => {
-                const scrollAmount = teamGrid.clientWidth * 0.8;
-                teamGrid.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
-
-            nextButton.addEventListener('click', () => {
-                const scrollAmount = teamGrid.clientWidth * 0.8;
-                teamGrid.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Add event listeners
-            teamGrid.addEventListener('mousedown', dragStart);
-            teamGrid.addEventListener('touchstart', dragStart);
-            window.addEventListener('mousemove', drag);
-            window.addEventListener('touchmove', drag);
-            window.addEventListener('mouseup', dragEnd);
-            window.addEventListener('touchend', dragEnd);
-
-            // Show/hide arrows on scroll
-            teamGrid.addEventListener('scroll', showHideArrows);
-
-            // Initial check for arrows
-            showHideArrows();
-        });
-    </script>
+    <script src="header-scroll.js"></script>
 </body>
 </html> 

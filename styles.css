@@ -2,9 +2,8 @@
 /* Variables */
 :root {
     --primary-color: #4A90E2;
-    --primary-color-transparent: #4a91e227;
     --secondary-color: #EDF4FC;
-    --tertiary-color: #EDF4FC;
+    --tertiary-color: #1E3A70;
     --text-color: #333333;
     --light-text: #666666;
     --extra-light: #ebebeb;
@@ -331,7 +330,7 @@ section:not(.hero):not(.video) {
     padding: 2rem 0;
     color: white;
     text-align: center;
-    background-color: #13315C;
+    background-color: var(--tertiary-color);
 }
 
 .banner-content {
@@ -386,7 +385,7 @@ section:not(.hero):not(.video) {
 .cta-banner {
     padding: 2rem 0;
     text-align: center;
-    background-color: #13315C;
+    background-color: var(--tertiary-color);
 }
 
 .cta-banner h2 {
@@ -438,7 +437,7 @@ section:not(.hero):not(.video) {
 .meet-banner {
     padding: 2rem 0;
     text-align: center;
-    background-color: #13315C;
+    background-color: var(--tertiary-color);
 }
 
 .meet-banner h2 {
@@ -522,9 +521,17 @@ section:not(.hero):not(.video) {
     box-shadow: var(--shadow);
 }
 
+.about-image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
 /* Services Section */
 .services {
     padding: 3rem 0 4rem 0;
+    background-color: var(--secondary-color);
 }
 
 .services-grid {
@@ -535,15 +542,16 @@ section:not(.hero):not(.video) {
 }
 
 .service-card {
-    background-color: var(--extra-light);
+    background-color: var(--white);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--large-shadow);
+    box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--large-shadow);
 }
 
 .service-card img {
@@ -565,7 +573,7 @@ section:not(.hero):not(.video) {
 /* Gallery Section */
 .gallery {
     padding: 4rem 0;
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
 }
 
 .carousel-wrapper {
@@ -648,7 +656,7 @@ section:not(.hero):not(.video) {
 /* Contact Section */
 .contact {
     padding: 4rem 0;
-    background: linear-gradient(var(--tertiary-color) 0%, var(--secondary-color) 70%);
+    background-color: var(--secondary-color);
 }
 
 .contact-grid {
@@ -705,11 +713,12 @@ section:not(.hero):not(.video) {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
     border-radius: 50%;
     color: var(--primary-color);
     font-size: 1.25rem;
     text-decoration: none;
+    box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
@@ -717,7 +726,7 @@ section:not(.hero):not(.video) {
     background-color: var(--primary-color);
     color: var(--white);
     transform: translateY(-3px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--large-shadow)
 }
 
 .contact-form-container {
@@ -1186,7 +1195,7 @@ textarea {
 /* Page Header */
 .page-header {
     padding: 8rem 0 4rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('media/espacios/comedor_1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(media/espacios/comedor_1.jpg);
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -1245,6 +1254,52 @@ textarea {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: var(--large-shadow);
+}
+
+/* Mission and Vision Section */
+.mission-vision {
+    padding: 4rem 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(media/the_senior_group_poster.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--dark-text);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mission-vision-card {
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--white);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-vision-card:hover {
+    transform: translateY(-5px);
+}
+
+.mission-vision-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.mission-vision-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
 }
 
 /* Values Section */
@@ -1678,4 +1733,30 @@ textarea {
     .team-member {
         padding: 1.5rem;
     }
-} 
+}
+
+/* Services List Section */
+.list-section {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.list-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.list-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-card ul li {
+    list-style-type: "\2713";
+}
+
+.list-card ul li::marker {
+    color: var(--primary-color);
+}
