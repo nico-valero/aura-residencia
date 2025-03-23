@@ -1219,7 +1219,7 @@ textarea {
 /* About Story Section */
 .about-story {
     padding: 4rem 0;
-    background-color: var(--white);
+    background-color: var(--secondary-color);
 }
 
 .about-story .about-content {
