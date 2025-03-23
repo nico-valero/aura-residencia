@@ -1108,6 +1108,11 @@ textarea {
         grid-template-columns: 1fr;
     }
 
+    .about .container .about-content .about-image {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -1748,10 +1753,17 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .list-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
 
 .list-card {
-    padding: 2rem;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
