@@ -420,7 +420,7 @@ section:not(.hero):not(.video) {
 }
 
 .cta-banner .cta-text p {
-    text-align: justify;
+    text-align: center;
     font-size: 1rem;
 }
 
@@ -446,7 +446,7 @@ section:not(.hero):not(.video) {
 
 .meet-banner p {
     font-size: 1rem;
-    text-align: justify;
+    text-align: center;
     margin-top: -1rem;
     margin-bottom: 2rem;
     color: white;
@@ -457,22 +457,22 @@ section:not(.hero):not(.video) {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    flex-direction: row; /* Default to row layout */
+    flex-direction: row;
     flex: 2;
 }
 
 .meet-banner .cta-image {
-    flex: 1; /* Allow the image to take up space */
+    flex: 1;
 }
 
 .meet-banner .cta-text {
-    flex: 2; /* Allow the text to take up more space */
+    flex: 2;
 }
 
 .meet-banner .cta-image video {
-    width: 100%; /* Make the video responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: add some border radius */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 @media (max-width: 980px) {
@@ -484,17 +484,17 @@ section:not(.hero):not(.video) {
 /* Responsive adjustments for meet-banner */
 @media (max-width: 768px) {
     .meet-banner .cta-content {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        align-items: center;
     }
 
     .meet-banner .cta-image {
-        margin-bottom: 1rem; /* Add space below the image */
-        flex: none; /* Reset flex to prevent stretching */
+        margin-bottom: 1rem;
+        flex: none;
     }
 
     .meet-banner .cta-text {
-        text-align: center; /* Center text on smaller screens */
+        text-align: center;
     }
 }
 
