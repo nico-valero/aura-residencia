@@ -1074,6 +1074,7 @@ textarea {
         background-color: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        color: var(--text-color);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1268,7 +1269,7 @@ textarea {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--dark-text);
+    color: var(--text-color);
 }
 
 .mission-vision-grid {
