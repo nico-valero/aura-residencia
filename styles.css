@@ -446,7 +446,7 @@ section:not(.hero):not(.video) {
 
 .meet-banner p {
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
     margin-top: -1rem;
     margin-bottom: 2rem;
     color: white;
