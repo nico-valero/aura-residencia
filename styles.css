@@ -1826,3 +1826,23 @@ textarea {
 .faq-card.active .arrow-icon {
     transform: rotate(-90deg);
 }
+
+.gallery-video {
+    padding: 4rem 0;
+    background-color: var(--secondary-color);
+}
+
+.video-gallery {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.video-gallery video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
