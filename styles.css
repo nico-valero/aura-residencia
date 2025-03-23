@@ -1141,6 +1141,10 @@ textarea {
         grid-template-columns: 1fr;
     }
 
+    .about-blue .about-content {
+        grid-template-columns: 1fr;
+    }
+
     .about .container .about-content .about-image {
         grid-row: 1;
         grid-column: 1;
