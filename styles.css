@@ -76,8 +76,8 @@ h2::after {
     right: 0;
     width: 100%;
     background: transparent;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: var(--transition);
@@ -680,8 +680,8 @@ section:not(.hero):not(.video) {
 
 .carousel.dragging {
     cursor: grabbing;
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 .carousel-card {
@@ -978,6 +978,10 @@ textarea {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .copyright {
@@ -1119,8 +1123,8 @@ textarea {
         height: 100vh;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         color: var(--text-color);
         flex-direction: column;
         justify-content: center;
@@ -1447,8 +1451,8 @@ textarea {
     scroll-behavior: smooth;
     padding: 20px 0;
     cursor: grab;
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 .team-grid.dragging {
@@ -1486,12 +1490,12 @@ textarea {
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
-    user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+    user-select: none;
 }
 
 .team-member:hover .member-image img {
@@ -1840,6 +1844,10 @@ textarea {
 .list-card ul li {
     list-style-type: none;
     margin-bottom: 0.5rem;
+}
+
+.list-card span {
+    color: var(--primary-color);
 }
 
 /* FAQ Section Styles */
