@@ -1,0 +1,72 @@
+# Enable caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Default expiration: 1 month after request
+    ExpiresDefault "access plus 1 month"
+    
+    # HTML files
+    ExpiresByType text/html "access plus 0 seconds"
+    
+    # CSS, JavaScript, and JSON files
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/json "access plus 1 year"
+    
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    
+    # Fonts
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType application/x-font-woff "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    
+    # Media files
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+    ExpiresByType audio/mpeg "access plus 1 year"
+    ExpiresByType audio/ogg "access plus 1 year"
+</IfModule>
+
+# Set cache-control headers
+<IfModule mod_headers.c>
+    # HTML files - no caching
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+    
+    # Static assets - long-term caching with immutable
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|webp|woff|woff2|ttf|eot|mp4|webm|ogg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Set security headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule> 

@@ -17,34 +17,34 @@ const showHideIcons = (carousel) => {
     }
 }
 
-// Handle gallery carousel arrows
-galleryArrows.forEach(icon => {
-    icon.addEventListener("click", () => {
-        const carousel = icon.closest('.carousel-wrapper').querySelector('.carousel');
-        if (carousel) {
-            const firstImg = carousel.querySelector("img");
-            if (firstImg) {
-                let firstImgWidth = firstImg.clientWidth + 14;
-                carousel.scrollLeft += icon.classList.contains('ri-arrow-drop-left-line') ? -firstImgWidth : firstImgWidth;
-                setTimeout(() => showHideIcons(carousel), 60);
-            }
+const handleCarouselArrow = (icon) => {
+    const carousel = icon.closest('.carousel-wrapper').querySelector('.carousel');
+    if (carousel) {
+        const firstImg = carousel.querySelector("img");
+        if (firstImg) {
+            let firstImgWidth = firstImg.clientWidth + 14;
+            carousel.scrollLeft += icon.classList.contains('ri-arrow-drop-left-line') ? -firstImgWidth : firstImgWidth;
+            setTimeout(() => showHideIcons(carousel), 60);
         }
-    });
-});
+    }
+}
 
-// Handle team carousel arrows
-teamArrows.forEach(icon => {
-    icon.addEventListener("click", () => {
-        const carousel = icon.closest('.carousel-wrapper').querySelector('.carousel');
-        if (carousel) {
-            const firstImg = carousel.querySelector("img");
-            if (firstImg) {
-                let firstImgWidth = firstImg.clientWidth + 14;
-                carousel.scrollLeft += icon.classList.contains('ri-arrow-drop-left-line') ? -firstImgWidth : firstImgWidth;
-                setTimeout(() => showHideIcons(carousel), 60);
-            }
+// Handle gallery and team carousel arrows
+[...galleryArrows, ...teamArrows].forEach(icon => {
+    icon.addEventListener("click", () => handleCarouselArrow(icon));
+    
+    // Add keyboard handler for Enter key
+    icon.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleCarouselArrow(icon);
         }
     });
+    
+    // Make arrows focusable and add role
+    icon.setAttribute("tabindex", "0");
+    icon.setAttribute("role", "button");
+    icon.setAttribute("aria-label", icon.classList.contains('ri-arrow-drop-left-line') ? "Previous slide" : "Next slide");
 });
 
 const dragStart = (e) => {

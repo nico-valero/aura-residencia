@@ -33,6 +33,12 @@ body {
 h1, h2, h3, h4 {
     font-family: 'Lora', serif;
     margin-bottom: 1rem;
+    text-wrap: balance;
+}
+
+p, li, figcaption {
+    max-width: 65ch;
+    text-wrap: pretty;
 }
 
 h2 {
@@ -184,17 +190,16 @@ h2::after {
 /* Header styles when scrolled */
 .header.scrolled {
     background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
 .header.scrolled .logo {
-    color: var(--primary-color);
+    color: var(--text-color);
     text-shadow: none;
 }
 
 .header.scrolled .logo:hover {
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--large-shadow);
 }
 
 .header.scrolled .nav-link {
@@ -386,6 +391,13 @@ section:not(.hero):not(.video) {
     padding: 2rem 0;
     text-align: center;
     background-color: var(--tertiary-color);
+}
+
+.cta-banner .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .cta-banner h2 {
@@ -669,6 +681,7 @@ section:not(.hero):not(.video) {
 .carousel.dragging {
     cursor: grabbing;
     user-select: none;
+    -webkit-user-select: none;
 }
 
 .carousel-card {
@@ -1433,6 +1446,7 @@ textarea {
     padding: 20px 0;
     cursor: grab;
     user-select: none;
+    -webkit-user-select: none;
 }
 
 .team-grid.dragging {
@@ -1471,11 +1485,11 @@ textarea {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
     user-select: none;
+    -webkit-user-select: none;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
 }
 
 .team-member:hover .member-image img {
