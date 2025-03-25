@@ -716,6 +716,7 @@ section:not(.hero):not(.video) {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
+    color: var(--text-color);
 }
 
 .info-item {
@@ -733,7 +734,10 @@ section:not(.hero):not(.video) {
 
 .info-item h4 {
     margin-bottom: 0.25rem;
-    color: var(--primary-color);
+}
+
+.info-item p {
+    color: var(--light-text);
 }
 
 .contact-social {
@@ -743,7 +747,6 @@ section:not(.hero):not(.video) {
 }
 
 .contact-social h4 {
-    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
