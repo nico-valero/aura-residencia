@@ -1716,6 +1716,14 @@ textarea {
     color: var(--light-text);
 }
 
+.join-text p a {
+    transition: var(--transition);
+}
+
+.join-text p a:hover {
+    color: var(--tertiary-color);
+}
+
 .join-text ul {
     list-style: none;
     margin: 1.5rem 0;
