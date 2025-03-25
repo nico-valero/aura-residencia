@@ -716,7 +716,6 @@ section:not(.hero):not(.video) {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
-    color: var(--text-color);
 }
 
 .info-item {
