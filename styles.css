@@ -133,20 +133,19 @@ h2::after {
 }
 
 .logo {
-    font-family: 'Lora', serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--white);
-    text-decoration: none;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    width: 100px;
+    fill: var(--white);
     transition: var(--transition);
     cursor: pointer;
     display: inline-block;
 }
 
 .logo:hover {
-    color: var(--extra-light);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    fill: var(--extra-light);
+}
+
+.logo svg {
+    display: block;
 }
 
 .nav-links {
@@ -229,12 +228,11 @@ h2::after {
 }
 
 .header.scrolled .logo {
-    color: var(--text-color);
-    text-shadow: none;
+    fill: var(--text-color);
 }
 
 .header.scrolled .logo:hover {
-    text-shadow: var(--large-shadow);
+    fill: var(--tertiary-color);
 }
 
 .header.scrolled .nav-link {
@@ -273,9 +271,8 @@ h2::after {
 }
 
 .hero h1 {
-    font-size: 6rem;
-    margin-bottom: -1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 500px;
 }
 
 
@@ -954,12 +951,10 @@ textarea {
 }
 
 .footer-logo {
+    width: 180px;
+    margin-top: 0.3rem;
+    fill: var(--white);
     grid-column: 1;
-}
-
-.footer-logo-img {
-    max-width: 200px;
-    height: auto;
 }
 
 .footer-section h4 {
