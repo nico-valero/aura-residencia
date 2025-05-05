@@ -1,7 +1,7 @@
 /* Reset and Base Styles */
 /* Variables */
 :root {
-    --primary-color: #4A90E2;
+    --primary-color: #3A78C2;
     --secondary-color: #EDF4FC;
     --tertiary-color: #1E3A70;
     --text-color: #333333;
@@ -285,7 +285,7 @@ h2::after {
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+    background: linear-gradient(135deg, #3A78C2 0%, #2D65A3 100%);
     color: var(--white);
     text-decoration: none;
     border-radius: 50px;
@@ -300,7 +300,7 @@ h2::after {
 .cta-button:hover {
     transform: translateY(-3px) scale(1.01);
     box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
-    background: linear-gradient(135deg, #357ABD 0%, #4A90E2 100%);
+    background: linear-gradient(135deg, #2D65A3 0%, #3A78C2 100%);
 }
 
 .cta-button:active {
