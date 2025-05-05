@@ -951,10 +951,18 @@ textarea {
 }
 
 .footer-logo {
-    width: 180px;
+    width: 120px;
     margin-top: 0.3rem;
     fill: var(--white);
     grid-column: 1;
+}
+
+.footer-logo svg {
+    transition: var(--transition);
+}
+
+.footer-logo svg:hover{
+    fill: var(--primary-color);
 }
 
 .footer-section h4 {
