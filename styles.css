@@ -356,6 +356,26 @@ h2::after {
     border-radius: 0;
 }
 
+.video-cel {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+@media (max-width: 768px) {
+    .video-hero {
+        display: none;
+    }
+    .video-cel {
+        display: block;
+    }
+}
+
 /* Ensure other sections start after the video */
 section:not(.hero):not(.video) {
     position: relative;
