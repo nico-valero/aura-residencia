@@ -422,6 +422,28 @@
         </a>    
     </footer>
 
+    
+    <script>
+        const video = document.querySelector('.video-cel');
+    
+        window.addEventListener('load', () => {
+        const tryPlay = () => {
+            video.play().catch(() => {
+            // Fallback: play after first user interaction (for iOS)
+            document.addEventListener('touchstart', () => {
+                video.play();
+            }, { once: true });
+            });
+        };
+    
+        if (video.readyState >= 2) {
+            tryPlay();
+        } else {
+            video.addEventListener('loadeddata', tryPlay);
+        }
+        });
+    </script>
+
     <script src="scripts/script.js"></script>
     <script src="scripts/contact-form.js"></script>
 </body>
