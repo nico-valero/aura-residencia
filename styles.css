@@ -275,7 +275,6 @@ h2::after {
     width: 500px;
 }
 
-
 .tagline {
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -358,9 +357,6 @@ section:not(.hero):not(.video) {
     position: relative;
     z-index: 1;
 }
-
-
-
 
 /* Banner section styles */
 .banner {
@@ -1247,16 +1243,18 @@ textarea {
 
 @media (max-width: 480px) {
     .hero {
-        padding: 6rem 0 4rem;
+        padding: 4rem 0 6rem;
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2rem;
+        width: 300px;
         margin-bottom: -0.8rem;
     }
 
     .tagline {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
 
     .cta-button {
