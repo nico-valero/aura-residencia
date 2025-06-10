@@ -156,6 +156,10 @@ h2::after {
     padding: 0;
 }
 
+.nav-links.active {
+    background-color: var(--tertiary-color);
+}
+
 .nav-link {
     text-decoration: none;
     color: var(--white);
